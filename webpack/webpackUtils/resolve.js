@@ -11,5 +11,8 @@ module.exports = {
     alias: {
         '@': SRC_PATH,
         '@images': path.resolve(SRC_PATH, 'assets/images')
+    },
+    fallback: {
+        "events": false
     }
 }

@@ -26,9 +26,9 @@ const config = {
         host: "127.0.0.1",
         hot: true,
         port: 9003,
-        client: {
-            logging: "error",
-        },
+        // client: {
+        //     logging: "error",
+        // },
 
         static: {
             directory: DIST_PATH,

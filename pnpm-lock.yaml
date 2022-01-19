@@ -12,15 +12,21 @@ specifiers:
   '@pmmmwh/react-refresh-webpack-plugin': ^0.5.4
   '@types/react': ^17.0.38
   '@types/react-dom': ^17.0.11
+  ansi-html-community: ^0.0.8
   babel-loader: ^8.2.3
   clean-webpack-plugin: ^4.0.0
   copy-webpack-plugin: ^10.2.0
+  core-js-pure: ^3.20.3
   cross-env: ^7.0.3
   css-loader: ^6.5.1
   dotenv: ^12.0.4
   dotenv-webpack: ^7.0.3
+  error-stack-parser: ^2.0.6
+  events: ^3.3.0
+  html-entities: ^2.3.2
   html-webpack-plugin: ^5.5.0
   mini-css-extract-plugin: 2.4.5
+  object-assign: ^4.1.1
   postcss: ^8.4.5
   postcss-flexbugs-fixes: ^5.0.2
   postcss-import: ^14.0.2
@@ -33,6 +39,8 @@ specifiers:
   react-refresh: ^0.11.0
   sass: ^1.48.0
   sass-loader: ^12.4.0
+  scheduler: ^0.20.2
+  stackframe: ^1.2.0
   style-loader: ^3.3.1
   style-resources-loader: ^1.5.0
   typescript: ^4.5.4
@@ -44,14 +52,22 @@ specifiers:
 dependencies:
   '@types/react': registry.npmmirror.com/@types/react/17.0.38
   '@types/react-dom': registry.npmmirror.com/@types/react-dom/17.0.11
+  ansi-html-community: registry.npmmirror.com/ansi-html-community/0.0.8
   clean-webpack-plugin: registry.npmmirror.com/clean-webpack-plugin/4.0.0_webpack@5.66.0
   copy-webpack-plugin: registry.npmmirror.com/copy-webpack-plugin/10.2.0_webpack@5.66.0
+  core-js-pure: registry.npmmirror.com/core-js-pure/3.20.3
   cross-env: registry.nlark.com/cross-env/7.0.3
   dotenv: registry.npmmirror.com/dotenv/12.0.4
   dotenv-webpack: registry.npmmirror.com/dotenv-webpack/7.0.3_webpack@5.66.0
+  error-stack-parser: registry.nlark.com/error-stack-parser/2.0.6
+  events: registry.npmmirror.com/events/3.3.0
+  html-entities: registry.nlark.com/html-entities/2.3.2
+  object-assign: registry.nlark.com/object-assign/4.1.1
   react: registry.npmmirror.com/react/17.0.2
   react-dmo: registry.npmmirror.com/react-dmo/0.0.1-security
   react-dom: registry.npmmirror.com/react-dom/17.0.2_react@17.0.2
+  scheduler: registry.npmmirror.com/scheduler/0.20.2
+  stackframe: registry.nlark.com/stackframe/1.2.0
   typescript: registry.npmmirror.com/typescript/4.5.4
   webpack: registry.npmmirror.com/webpack/5.66.0_webpack-cli@4.9.1
   webpack-cli: registry.npmmirror.com/webpack-cli/4.9.1_ad725fab8cb7e49fac502828bebe26bc
@@ -443,14 +459,6 @@ packages:
     dependencies:
       clean-stack: registry.nlark.com/clean-stack/2.2.0
       indent-string: registry.nlark.com/indent-string/4.0.0
-    dev: false
-
-  registry.nlark.com/ansi-html-community/0.0.8:
-    resolution: {integrity: sha1-afvE1sy+OD+XNpNK40w/gpDxv0E=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/ansi-html-community/download/ansi-html-community-0.0.8.tgz}
-    name: ansi-html-community
-    version: 0.0.8
-    engines: {'0': node >= 0.8.0}
-    hasBin: true
     dev: false
 
   registry.nlark.com/ansi-regex/5.0.1:
@@ -926,7 +934,6 @@ packages:
     version: 2.0.6
     dependencies:
       stackframe: registry.nlark.com/stackframe/1.2.0
-    dev: true
 
   registry.nlark.com/escalade/3.1.1:
     resolution: {integrity: sha1-2M/ccACWXFoBdLSoLqpcBVJ0LkA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/escalade/download/escalade-3.1.1.tgz}
@@ -2380,7 +2387,6 @@ packages:
     resolution: {integrity: sha1-UkKUktY8YuuYmATBFVLj0i53kwM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/stackframe/download/stackframe-1.2.0.tgz}
     name: stackframe
     version: 1.2.0
-    dev: true
 
   registry.nlark.com/statuses/1.5.0:
     resolution: {integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/statuses/download/statuses-1.5.0.tgz}
@@ -4412,7 +4418,6 @@ packages:
     version: 0.0.8
     engines: {'0': node >= 0.8.0}
     hasBin: true
-    dev: true
 
   registry.npmmirror.com/ansi-styles/3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ansi-styles/download/ansi-styles-3.2.1.tgz}
@@ -4706,7 +4711,6 @@ packages:
     name: core-js-pure
     version: 3.20.3
     requiresBuild: true
-    dev: true
 
   registry.npmmirror.com/css-blank-pseudo/3.0.2_postcss@8.4.5:
     resolution: {integrity: sha512-hOb1LFjRR+8ocA071xUSmg5VslJ8NGo/I2qpUpdeAYyBVCgupS5O8SEVo4SxEMYyFBNodBkzG3T1iqW9HCXxew==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/css-blank-pseudo/download/css-blank-pseudo-3.0.2.tgz}
@@ -4971,7 +4975,7 @@ packages:
     dev: false
 
   registry.npmmirror.com/events/3.3.0:
-    resolution: {integrity: sha1-Mala0Kkk4tLEGagTrrLE6HjqdAA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/events/download/events-3.3.0.tgz?cache=0&sync_timestamp=1636463250787&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fevents%2Fdownload%2Fevents-3.3.0.tgz}
+    resolution: {integrity: sha1-Mala0Kkk4tLEGagTrrLE6HjqdAA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/events/download/events-3.3.0.tgz?cache=0&sync_timestamp=1636450001961&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fevents%2Fdownload%2Fevents-3.3.0.tgz}
     name: events
     version: 3.3.0
     engines: {node: '>=0.8.x'}
@@ -6493,7 +6497,7 @@ packages:
       '@types/serve-index': registry.npmmirror.com/@types/serve-index/1.9.1
       '@types/sockjs': registry.npmmirror.com/@types/sockjs/0.3.33
       '@types/ws': registry.npmmirror.com/@types/ws/8.2.2
-      ansi-html-community: registry.nlark.com/ansi-html-community/0.0.8
+      ansi-html-community: registry.npmmirror.com/ansi-html-community/0.0.8
       bonjour: registry.nlark.com/bonjour/3.5.0
       chokidar: registry.npmmirror.com/chokidar/3.5.2
       colorette: registry.npmmirror.com/colorette/2.0.16
