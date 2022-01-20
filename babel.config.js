@@ -1,64 +1,63 @@
 let isDev = false;
-if (process.env.NODE_ENV === "dev") {
-    isDev = true;
+if (process.env.NODE_ENV === 'dev') {
+  isDev = true;
 }
 
-module.exports = (api) => {
-    console.log('%c [ api ]-7', 'font-size:13px; background:pink; color:#bf2c9f;', api)
+module.exports = api => {
+  console.log('%c [ api ]-7', 'font-size:13px; background:pink; color:#bf2c9f;', api);
 
-    api.cache(true);
-    const presets = [[
-        "@babel/preset-react",
-        {
-            "development": isDev
-        }
+  api.cache(true);
+  const presets = [
+    [
+      '@babel/preset-react',
+      {
+        development: isDev,
+      },
     ],
     [
-        "@babel/preset-env",
-        {
-            "targets": {
-                "browsers": [
-                    ">0.25%",
-                    "not ie 11",
-                    "not op_mini all"
-                ]
-            }
-        }
+      '@babel/preset-env',
+      {
+        targets: {
+          browsers: ['>0.25%', 'not ie 11', 'not op_mini all'],
+        },
+      },
     ],
     [
-        "@babel/preset-typescript",
-        {
-            "isTSX": true,
-            "allExtensions": true
-        }
-    ]];
-    const plugins = [[
-        "@babel/plugin-proposal-decorators",
-        {
-            "legacy": true
-        }
+      '@babel/preset-typescript',
+      {
+        isTSX: true,
+        allExtensions: true,
+      },
+    ],
+  ];
+  const plugins = [
+    [
+      '@babel/plugin-proposal-decorators',
+      {
+        legacy: true,
+      },
     ],
     [
-        "@babel/plugin-transform-runtime",
-        {
-            "corejs": 3,
-            "regenerator": true
-        }
-    ]];
+      '@babel/plugin-transform-runtime',
+      {
+        corejs: 3,
+        regenerator: true,
+      },
+    ],
+  ];
 
-    if (isDev) {
-        plugins.push([
-            "react-refresh/babel",
-            {
-                "skipEnvCheck": true,
-            }
-        ]);
-    }
-    return {
-        // 这个不设置的话，webpack 魔法注释会被删除，魔法注释用于分包
-        "comments": true,
-        presets,
-        plugins
-    };
-}
-
+  if (isDev) {
+    plugins.push([
+      'react-refresh/babel',
+      {
+        skipEnvCheck: true,
+      },
+    ]);
+  }
+  return {
+    // 这个不设置的话，webpack 魔法注释会被删除，魔法注释用于分包
+    comments: true,
+    presets,
+    plugins,
+  };
+};
