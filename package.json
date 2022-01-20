@@ -6,8 +6,17 @@
   "scripts": {
     "build": "webpack --config webpack/webpack.prod.js",
     "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js",
-    "start": "cross-env NODE_ENV=dev webpack serve --config webpack/webpack.dev.js"
-    
+    "start": "cross-env NODE_ENV=dev webpack serve --config webpack/webpack.dev.js",
+    "prepra": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "pnpm run lint",
+      "git add --force"
+    ],
+    "*.{md,json}": [
+      "git add --force"
+    ]
   },
   "repository": {
     "type": "git",
@@ -20,6 +29,9 @@
   },
   "homepage": "https://github.com/Thlnking/TS-React-unknow#readme",
   "dependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@types/node": "*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
@@ -43,6 +55,8 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "events": "^3.3.0",
     "html-entities": "^2.3.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.2.1",
     "object-assign": "^4.1.1",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
